@@ -33,7 +33,7 @@
 #define COVER_PANEL     False     /* full screen window covers panel or not */
 #define MONOCLE_GAP     False     /* useless gap in monocle mode
                                    * set MONOCLE_BORDER to **True** before using this*/
-#define MONOCLE_BORDER  True     /* window border in monocle mode */
+#define MONOCLE_BORDER  False     /* window border in monocle mode */
 
 struct ml {
     int m; /* monitor that the desktop in on  */
