@@ -817,7 +817,10 @@ void maprequest(XEvent *e) {
     c = addwindow(w, (d = &(m = &monitors[newmon])->desktops[newdsk])); /* from now on, use c->win */
     c->istrans = XGetTransientForHint(dis, c->win, &w);
     if ((c->isfloat = (floating || d->mode == FLOAT)) && !c->istrans)
-        XMoveWindow(dis, c->win, m->x + (m->w - wa.width)/2, m->y + (m->h - wa.height)/2);
+        //XMoveWindow(dis, c->win, m->x + (m->w - wa.width)/2, m->y + (m->h - wa.height)/2);
+          XMoveWindow(dis, c->win, m->x + (m->w - wa.width)/2 - BORDER_WIDTH,
+                      m->y + (m->h - wa.height - (TOP_PANEL && d->sbar ? PANEL_HEIGHT : 0))/2 - BORDER_WIDTH 
+                      + (TOP_PANEL && d->sbar ? PANEL_HEIGHT : 0));
 
     int i; unsigned long l; unsigned char *state = NULL; Atom a;
     if (XGetWindowProperty(dis, c->win, netatoms[NET_WM_STATE], 0L, sizeof a,
@@ -889,7 +892,8 @@ void monocle(int x, int y, int w, int h, const Desktop *d) {
     if (d->mode != MONOCLE) {
         canclefullscreen(d, &monitors[currmonidx]);
         for (Client *c = d->head; c; c = c->next) {
-            XMoveResizeWindow(dis, c->win, x + USELESSGAP, y + USELESSGAP, w - 2*USELESSGAP - 2*BORDER_WIDTH, h - 2*USELESSGAP - 2*BORDER_WIDTH);
+            if (!(c->isfloat || c->istrans))
+                XMoveResizeWindow(dis, c->win, x + USELESSGAP, y + USELESSGAP, w - 2*USELESSGAP - 2*BORDER_WIDTH, h - 2*USELESSGAP - 2*BORDER_WIDTH);
         }
     } else {
         for (Client *c = d->head; c; c = c->next) 
