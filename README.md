@@ -153,14 +153,14 @@ Easiest way to apply a patch, is to `git merge` that branch.
 
 Currently:
 
- ~~* [centerwindow]   : center new floating windows on the screen and  center any window with a shortcut~~ **Already patched**
+ * ~~[centerwindow]   : center new floating windows on the screen and  center any window with a shortcut~~ **Already patched**
  * [fibonacci]      : adds fibonacci layout mode
- ~~* [initlayouts]    : define initial layouts for every desktop~~ **Already patched**
- ~~* [monocleborders] : adds borders to the monocle layout~~ **Already patched**
+ * ~~[initlayouts]    : define initial layouts for every desktop~~ **Already patched**
+ * ~~[monocleborders] : adds borders to the monocle layout~~ **Already patched**
  * [nmaster]        : adds nmaster layout - multiple master windows for BSTACK and TILE layouts
  * [rectangle]      : draws only a rectangle when moving/resizing windows to keep resources low (ie through an ssh forwarded session)
  * [showhide]       : adds a function to show and hide all windows on all desktops
- ~~* [uselessgaps]    : adds gaps around every window on screen~~ **Already patched**
+ * ~~[uselessgaps]    : adds gaps around every window on screen~~ **Already patched**
  * [warpcursor]     : cursors follows and is placed in the center of the current window
  * [windowtitles]   : along with the rest desktop info, output the title of the current window
 
@@ -208,4 +208,6 @@ Thanks
  * [dnuux](https://github.com/dnuux)
  * Matus Telgarsky
 
-
+Screenshot
+------
+![](http://i.imgur.com/PtZhJqj.png)
