@@ -1,17 +1,14 @@
 monsterwm
 =========
 
-→ tiny and monstrous!
+¡ú tiny and monstrous!
 ---------------------
 
 **monsterwm** is a minimal, lightweight, tiny but monstrous dynamic tiling window manager.
-It will try to stay as small as possible. Currently under 700 lines with the config file included.
 It provides a set of different layout modes (see below), including floating mode support.
 Each virtual desktop has its own properties, unaffected by other desktops' or monitors' settings.
-For [screenshots][scrot] and ramblings/updates check the [topic on ArchLinux forums][monsterwm].
 
-  [scrot]: https://bbs.archlinux.org/viewtopic.php?id=141853
-  [monsterwm]: https://bbs.archlinux.org/viewtopic.php?id=132122
+***Attention*** : Since monsterwm uses xinerama, if xinerama breaks down, monsterwm will break too. Be careful with the xorg.conf !
 
 
 Modes
@@ -64,14 +61,14 @@ one can have as many windows he wants.
 
     -------------
     |           |
-    | no        |
-    | borders!  |
+    |           |
+    |           |
     |           |
     -------------
 
 `MONOCLE` layout presents one window at a time in fullscreen mode.
-Windows have no borders on this layout to save space.
-See the `monocleborders` branch to give those windows borders.
+One can decide whether full screen window have borders or not, have 
+gaps or not, covers panel or not.
 
 ---
 
@@ -138,15 +135,13 @@ Do not be limited by those examples.
 Installation
 ------------
 
-You need Xlib, then,
-copy `config.def.h` as `config.h`
-and edit to suit your needs.
+You need Xlib and xinerama, then,
+edit `config.h` to suit your needs.
 Build and install.
 
-    $ cp config.def.h config.h
     $ $EDITOR config.h
     $ make
-    # make clean install
+    # sudo make clean install
 
 
 Patches
@@ -158,14 +153,14 @@ Easiest way to apply a patch, is to `git merge` that branch.
 
 Currently:
 
- * [centerwindow]   : center new floating windows on the screen and  center any window with a shortcut
+ ~~* [centerwindow]   : center new floating windows on the screen and  center any window with a shortcut~~ **Already patched**
  * [fibonacci]      : adds fibonacci layout mode
- * [initlayouts]    : define initial layouts for every desktop
- * [monocleborders] : adds borders to the monocle layout
+ ~~* [initlayouts]    : define initial layouts for every desktop~~ **Already patched**
+ ~~* [monocleborders] : adds borders to the monocle layout~~ **Already patched**
  * [nmaster]        : adds nmaster layout - multiple master windows for BSTACK and TILE layouts
  * [rectangle]      : draws only a rectangle when moving/resizing windows to keep resources low (ie through an ssh forwarded session)
  * [showhide]       : adds a function to show and hide all windows on all desktops
- * [uselessgaps]    : adds gaps around every window on screen
+ ~~* [uselessgaps]    : adds gaps around every window on screen~~ **Already patched**
  * [warpcursor]     : cursors follows and is placed in the center of the current window
  * [windowtitles]   : along with the rest desktop info, output the title of the current window
 
@@ -180,30 +175,14 @@ Currently:
   [warpcursor]:     https://github.com/c00kiemon5ter/monsterwm/tree/warpcursor
   [windowtitles]:   https://github.com/c00kiemon5ter/monsterwm/tree/windowtitles
 
-There is also another branch, called [`core`].
-`core` is an even more stripped and minimal version of `monsterwm`,
-on top of which the `master` branch is built and extended.
-
-  [core]: https://github.com/c00kiemon5ter/monsterwm/tree/core
-
-The is also **xinerama** support for multiple monitors.
-
- * [xinerama-core][xc]   : the equivalent of `core` branch with xinerama support
- * [xinerama-master][xm] : the equivalent of `master` branch with xinerama support
- * [xinerama-init][xi]   : configurable initial values for each desktop on each monitor
-
- [xc]: https://github.com/c00kiemon5ter/monsterwm/tree/xinerama-core
- [xm]: https://github.com/c00kiemon5ter/monsterwm/tree/xinerama-master
- [xi]: https://github.com/c00kiemon5ter/monsterwm/tree/xinerama-init
-
 
 Bugs
 ----
 
-For any bug or request [fill an issue][bug] on [GitHub][ghp] or report on the [ArchLinux topic][monsterwm]
+For any bug or request please [fill an issue][bug].
 
-  [bug]: https://github.com/c00kiemon5ter/monsterwm/issues
-  [ghp]: https://github.com/c00kiemon5ter/monsterwm
+  [bug]: https://github.com/A1phaZer0/monsterwm-xinerama/issues
+ 
 
 
 License
