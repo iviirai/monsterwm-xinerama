@@ -1,7 +1,7 @@
 monsterwm
 =========
 
-¡ú tiny and monstrous!
+→ tiny and monstrous!
 ---------------------
 
 **monsterwm** is a minimal, lightweight, tiny but monstrous dynamic tiling window manager.
