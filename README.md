@@ -8,7 +8,9 @@ monsterwm
 It provides a set of different layout modes (see below), including floating mode support.
 Each virtual desktop has its own properties, unaffected by other desktops' or monitors' settings.
 
-***Attention*** : Since monsterwm uses xinerama, if xinerama breaks down, monsterwm will break too. Be careful with the xorg.conf !
+***Attention : Since monsterwm uses xinerama, if xinerama breaks down, monsterwm will break too.***
+***Unplug a monitor that already defined in xorg.conf will cause xinerama crash.***
+***Be careful with the xorg.conf !***
 
 
 Modes
