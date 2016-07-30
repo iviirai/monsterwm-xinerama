@@ -210,6 +210,8 @@ Thanks
  * [dnuux](https://github.com/dnuux)
  * Matus Telgarsky
 
-Screenshot
+Screenshots
 ------
-![](http://i.imgur.com/PtZhJqj.png)
+![](http://i.imgur.com/Jv5KpxV.png)
+![](http://i.imgur.com/7qK5Zyj.png)
+![](http://i.imgur.com/ooxHBmQ.png)
